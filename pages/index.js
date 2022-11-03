@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from "react";
-import { useDisclosure, Box, Flex } from "@chakra-ui/react";
+import { useDisclosure, Box, Flex, Image } from "@chakra-ui/react";
 import anime from "animejs";
 
 import Footer from "../components/Footer";
@@ -9,6 +9,7 @@ import Aboutme from "../components/Aboutme";
 import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import EditorAndTerminal from "../components/EditorAndTerminal";
+import StartMenu from "../components/StartMenu";
 
 import Folder from "../assets/folder.png";
 import Exp from "../assets/explorer.png";
@@ -21,6 +22,7 @@ export default function Home() {
   const [isContact, setContact] = useState(false);
   const [isSkill, setSkill] = useState(false);
   const [isE, setE] = useState(false);
+  const [isStart, setIsStart] = useState(false);
   const [workC, setWorkC] = useState(0);
 
   useEffect(() => {
@@ -233,13 +235,23 @@ export default function Home() {
           Photo={Dire}
         />
         <Box
-          onClick={() => {
+          onDoubleClick={() => {
             let tmp = workC;
             setWorkC(++tmp);
           }}
           id="work"
         >
-          <Shortcut title="Works" Photo={Game} />
+          <Flex
+            p="10px"
+            justifyContent="center"
+            alignItems="center"
+            flexDir="column"
+          >
+            <Image w="40px" alt="ss" src={Game?.src} />
+            <Box mt="2px" px="5px" bg={`#010081`} color={`white`}>
+              Works
+            </Box>
+          </Flex>
         </Box>
         <Shortcut onToggle={() => setE(!isE)} title="Recycle bin" Photo={Bin} />
       </Flex>
@@ -247,7 +259,8 @@ export default function Home() {
       <Contact onToggle={() => setContact(!isContact)} isOpen={isContact} />
       <Skills onToggle={() => setSkill(!isSkill)} isOpen={isSkill} />
       <EditorAndTerminal onToggle={() => setE(!isE)} isOpen={isE} />
-      <Footer />
+      <StartMenu onToggle={() => setIsStart(!isStart)} isOpen={isStart} />
+      <Footer onToggle={() => setIsStart(!isStart)} />
     </Box>
   );
 }

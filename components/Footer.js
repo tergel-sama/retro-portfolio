@@ -1,7 +1,7 @@
 import { Box, Flex, Image } from "@chakra-ui/react";
 import StartImg from "../assets/start-button.png";
 
-export default function Footer() {
+export default function Footer({ onToggle }) {
   return (
     <Flex
       pos="absolute"
@@ -14,7 +14,7 @@ export default function Footer() {
       bg="#c3c3c3"
       h="30px"
     >
-      <button>
+      <button onClick={onToggle}>
         <Box _active={{ pl: "0px" }} pl="14px">
           <Image alt="desu" src={StartImg?.src} />
         </Box>

@@ -17,6 +17,7 @@ export default function Aboutme({ onToggle, isOpen }) {
             I enjoy creating things that live on the internet.
           </Text>
           <Text>When I'm not coding, you'll find me malding in sea dota.</Text>
+          <Text>Btw you can dragg these windows : )</Text>
           <Spacer />
           <Flex justifyContent="center">
             <button onClick={onToggle} className="w-[50px]">

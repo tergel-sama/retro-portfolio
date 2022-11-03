@@ -129,7 +129,7 @@ export default function Skills({ onToggle, isOpen }) {
 
   return (
     <Window
-      title="My skills bro i don't think cool and good but hey anyway here"
+      title="My skills bro i don't think cool and good but hey anyway here but click2"
       onToggle={onToggle}
       isOpen={isOpen}
     >
