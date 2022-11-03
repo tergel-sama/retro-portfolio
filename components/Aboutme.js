@@ -11,13 +11,11 @@ export default function Aboutme({ onToggle, isOpen }) {
       isOpen={isOpen}
     >
       <Flex>
-        <Flex flexDir="column" pr="20px">
-          <Text>Wassup</Text>
-          <Text>
-            My name is Tergel and I enjoy creating things that live on the
-            internet.
+        <Flex color="black" flexDir="column" pr="20px">
+          <Text>Hello, my name is Tergel.</Text>
+          <Text mb="20px">
+            I enjoy creating things that live on the internet.
           </Text>
-          <br />
           <Text>When I'm not coding, you'll find me malding in sea dota.</Text>
           <Spacer />
           <Flex justifyContent="center">
